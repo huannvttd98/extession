@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Options Popup</title>
+</head>
+<body class="furima-assist-options">
+  <div class="" data-secret-input>
+    <label for="secret" class="bold">■シークレットコード</label>
+    <p class="mt-0 mb-0"><a href="https://kiyomaro.net/furima-assist-copy/" target="_blank">取得方法</a></p>
+    <input type="text" name="secret" class="mb-1">
+    <button id="submit">入力</button>
+    <span id="result" class="ml-1"></span>
+  </div>
+  <div class="mt-2 pt-2 border-top hidden" data-secret-area-wrapper>
+    <div class="">
+      <p class="mt-0 mb-1 bold">■ボタンの表示設定（画像下）</p>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・画像ダウンロード</p>
+        <label for="showImageDownloadOn">
+          <input type="radio" value="1" name="showImageDownload" id="showImageDownloadOn">表示する
+        </label>
+        <label for="showImageDownloadOff">
+          <input type="radio" value="0" name="showImageDownload" id="showImageDownloadOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・メルカリコピー出品</p>
+        <label for="showCopyToMercariOn">
+          <input type="radio" value="1" name="showCopyToMercari" id="showCopyToMercariOn">表示する
+        </label>
+        <label for="showCopyToMercariOff">
+          <input type="radio" value="0" name="showCopyToMercari" id="showCopyToMercariOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・ラクマコピー出品</p>
+        <label for="showCopyToRakumaOn">
+          <input type="radio" value="1" name="showCopyToRakuma" id="showCopyToRakumaOn">表示する
+        </label>
+        <label for="showCopyToRakumaOff">
+          <input type="radio" value="0" name="showCopyToRakuma" id="showCopyToRakumaOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・ヤフオクコピー出品</p>
+        <label for="showCopyToYahooAuctionOn">
+          <input type="radio" value="1" name="showCopyToYahooAuction" id="showCopyToYahooAuctionOn">表示する
+        </label>
+        <label for="showCopyToYahooAuctionOff">
+          <input type="radio" value="0" name="showCopyToYahooAuction" id="showCopyToYahooAuctionOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・ベイスコピー出品</p>
+        <label for="showCopyToBASEOn">
+          <input type="radio" value="1" name="showCopyToBASE" id="showCopyToBASEOn">表示する
+        </label>
+        <label for="showCopyToBASEOff">
+          <input type="radio" value="0" name="showCopyToBASE" id="showCopyToBASEOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・ストアーズコピー出品</p>
+        <label for="showCopyToStoresOn">
+          <input type="radio" value="1" name="showCopyToStores" id="showCopyToStoresOn">表示する
+        </label>
+        <label for="showCopyToStoresOff">
+          <input type="radio" value="0" name="showCopyToStores" id="showCopyToStoresOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・ミンネコピー出品</p>
+        <label for="showCopyToMinneOn">
+          <input type="radio" value="1" name="showCopyToMinne" id="showCopyToMinneOn">表示する
+        </label>
+        <label for="showCopyToMinneOff">
+          <input type="radio" value="0" name="showCopyToMinne" id="showCopyToMinneOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1">
+        <p class="mt-0 mb-0">・クリーマコピー出品</p>
+        <label for="showCopyToCreemaOn">
+          <input type="radio" value="1" name="showCopyToCreema" id="showCopyToCreemaOn">表示する
+        </label>
+        <label for="showCopyToCreemaOff">
+          <input type="radio" value="0" name="showCopyToCreema" id="showCopyToCreemaOff">表示しない
+        </label>
+      </div>
+      <div class="mb-1" id="mercariShopsVisibilityWrapper">
+        <p class="mt-0 mb-0">・メルショコピー出品</p>
+        <label for="showCopyToMercariShopsOn">
+          <input type="radio" value="1" name="showCopyToMercariShops" id="showCopyToMercariShopsOn">表示する
+        </label>
+        <label for="showCopyToMercariShopsOff">
+          <input type="radio" value="0" name="showCopyToMercariShops" id="showCopyToMercariShopsOff">表示しない
+        </label>
+      </div>
+    </div>
+    <div class="mt-2 pt-2 border-top">
+      <label for="mercariShopsId" class="bold">■メルカリShops ID　<span>※任意</span></label>
+      <p class="mt-0 mb-0"><a href="https://kiyomaro.net/furima-assist-shops-id/" target="_blank">取得方法</a></p>
+      <div>
+        <input type="text" name="mercariShopsId">
+      </div>
+      <div class="button-with-feedback-wrapper">
+        <button id="save">保存</button>
+        <span id="save-result" class="ml-1"></span>
+      </div>
+    </div>
+    <div class="mt-2 pt-2 border-top">
+      <p class="mt-0 mb-1 bold">■コピー出品のタブ選択</p>
+      <div class="mb-1">
+        <label for="copyItemOnNewTabOff">
+          <input type="radio" value="0" name="copyItemOnNewTab" id="copyItemOnNewTabOff">現在のタブ
+        </label>
+        <label for="copyItemOnNewTabOn">
+          <input type="radio" value="1" name="copyItemOnNewTab" id="copyItemOnNewTabOn">新しいタブ
+        </label>
+      </div>
+    </div>
+    <div class="mt-2 pt-2 border-top">
+      <p class="mt-0 mb-0 bold">■コピー出品の初期待機時間設定</p>
+      <p class="mt-0 mb-1">※メルカリへのコピー出品のみ</p>
+      <div>
+        <select name="waitBeforeListIntervalSec">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <span>秒</span>
+      </div>
+    </div>
+  </div>
+  <div class="" data-more-wrapper>
+    <div class="mt-2 pt-2 border-top">
+      <label class="bold">■[もっと見る]の実行回数</label>
+      <p class="mt-0 mb-0">※メルカリの出品中一覧ページ</p>
+      <p class="mt-0 mb-1">※メルカリのプロフィールページ</p>
+      <div>
+        <span>最大</span>
+        <select name="autoLoadMoreCount">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+        </select>
+        <span>回</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2 pt-2 border-top hidden" data-sp-secret-wrapper>
+    <p class="mt-0 mb-0 bold">■自動価格改定の間隔設定</p>
+    <p class="mt-0 mb-1">※設定値の間でランダム動作</p>
+    <div class="mb-1">
+      <div class="autoPriceDownIntervalInputsWrapper">
+        <input type="number" name="autoPriceDownIntervalMin" min="1">
+        <span class="mx-1">〜</span>
+        <input type="number" name="autoPriceDownIntervalMax" min="1">
+        <span class="mx-1">秒</span>
+      </div>
+      <div class="button-with-feedback-wrapper">
+        <button type="button" id="saveAutoPriceDownIntervals">保存</button>
+        <span id="autoPriceDownIntervalsFeedBack" class="ml-1"></span>
+      </div>
+    </div>
+  </div>
+  <div class="hidden" data-secret-area-wrapper>
+    <div class="mt-2 pt-2 border-top">
+      <label for="secret2" class="bold">■裏シークレットコード</label>
+      <div>
+        <input type="text" name="secret2">
+      </div>
+      <div class="button-with-feedback-wrapper">
+        <button id="secret2-check">入力</button>
+        <span id="secret2-check-result" class="ml-1"></span>
+      </div>
+    </div>
+  </div>
+  <div class="hidden" data-secret-area2-wrapper>
+    <div class="mt-2 pt-2 border-top">
+      <p class="mt-0 mb-0 bold">■自動価格改定の金額設定</p>
+      <p class="mt-0 mb-1">※0は無効（ボタン非表示）</p>
+      <div class="mb-1">
+        <input type="number" name="autoPriceDownValue" min="0" max="99999" step="1">
+        <div class="button-with-feedback-wrapper">
+          <button type="button" id="saveAutoPriceDownValue">保存</button>
+          <span id="autoPriceDownValueFeedBack" class="ml-1"></span>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 pt-2 border-top">
+      <p class="mt-0 mb-0 bold">■[再出品]の上乗せ金額設定</p>
+      <div class="mb-1">
+        <input type="number" name="addPriceAutoClone" min="0" max="99999" step="1">
+        <div class="button-with-feedback-wrapper">
+          <button type="button" id="saveAddPriceAutoClone">保存</button>
+          <span id="addPriceAutoCloneFeedBack" class="ml-1"></span>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 pt-2 border-top">
+      <p class="mt-0 mb-0 bold">■自動編集の待機時間設定</p>
+      <div class="mb-1">
+        <div>
+          <select name="autoProcessWaitIntervalSec">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <span>秒</span>
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 pt-2 border-top">
+      <p class="mt-0 mb-0 bold">■左上のボタン選択</p>
+      <div class="mb-1">
+        <label for="useCloneToDraftOff">
+          <input type="radio" value="0" name="useCloneToDraft" id="useCloneToDraftOff">[停止]or[再開]
+        </label>
+        <label for="useCloneToDraftOn">
+          <input type="radio" value="1" name="useCloneToDraft" id="useCloneToDraftOn">[下書き]
+        </label>
+        <br/>
+        <label for="openNewTab">
+          <input type="radio" value="2" name="useCloneToDraft" id="openNewTab">[新タブ] ※新規タブで開く
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script src="options.js"></script>
+</html>

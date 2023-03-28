@@ -1,0 +1,18 @@
+{
+    "cSpell.words": [
+        "chatwork",
+        "mecari",
+        "Rakuma",
+        "MERCARI",
+        "apiRet",
+        "endpush",
+        "buppan",
+        "abcdfghjkmnpqrstvwxyz",
+        "asincode"
+    ],  
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+
+}
